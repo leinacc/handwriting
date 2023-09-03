@@ -4,6 +4,16 @@ Based off https://github.com/ISSOtm/gb-starter-kit with some modifications:
 * `Makefile` - added rules for generating the keras model files
 * `src/include/defines.asm` - added a macro, `add_A_to_HL`
 
+## Files of interest
+
+* `handwriting.py` - trains the NN with a modified MNIST, whose inputs mimic the 14x14 GB grid
+* `process_keras.py` - extracts the trained model and generates an asm file of tables
+* `models.asm` - an example asm file output from the above extraction
+* `src/predict.asm` - the main prediction algorithm
+* `src/grid.asm` - grid logic
+* `src/text.asm` - simple text logic, plus it loads the grid-related tiles
+* `src/intro.asm` - game entry point
+
 ## Compiling
 
 ### Poetry
