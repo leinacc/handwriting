@@ -131,7 +131,7 @@ res/%.pb8.size: res/%
 model.keras: handwriting.py
 	python $< $@
 
-src/include/model.asm: model.keras process_keras.py
+res/model.asm: model.keras process_keras.py
 	python process_keras.py
 
 ###############################################

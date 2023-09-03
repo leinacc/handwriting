@@ -410,7 +410,7 @@ PrintStartToPredict::
     db "START to predict", $00
 
 
-INCLUDE "model.asm"
+INCLUDE "res/model.asm"
 
 
 SECTION "Predict Hram", HRAM

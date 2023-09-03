@@ -52,7 +52,7 @@ OutputLayerWeights:
 {dk1_list}
 
 
-OutputLayerBias::
+OutputLayerBias:
 {list_out("dl", db1)}
 """
 
