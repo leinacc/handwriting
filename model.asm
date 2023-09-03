@@ -222,5 +222,5 @@ OutputLayerWeights:
 	db $17, $f4, $cd, $03, $eb, $24, $1e, $ee, $04, $08
 
 
-OutputLayerBias::
+OutputLayerBias:
 	dl $ffffe7, $000015, $fffff0, $ffffef, $000020, $00004b, $ffffee, $000006, $ffffea, $ffffde
