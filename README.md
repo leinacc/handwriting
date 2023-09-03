@@ -1,4 +1,4 @@
-# Minifloat
+# Number prediction GB
 
 Based off https://github.com/ISSOtm/gb-starter-kit with some modifications:
 * `Makefile` - added rules for generating the keras model files
