@@ -4,48 +4,48 @@ SECTION "Text", ROM0
 
 LoadFont::
 ; Main ascii font
-	assert Font.end-Font <= $9800-$9200
-	ld de, Font
-	ld hl, $9200
-	ld bc, Font.end-Font
-	; Increment B if C is non-zero
-	dec bc
-	inc b
-	inc c
-	.loop:
-		wait_vram
-		ld a, [de]
-		ld [hl+], a
-		ld [hl+], a
-		inc de
-		dec c
-		jr nz, .loop
-		dec b
-		jr nz, .loop
+    assert Font.end-Font <= $9800-$9200
+    ld de, Font
+    ld hl, $9200
+    ld bc, Font.end-Font
+    ; Increment B if C is non-zero
+    dec bc
+    inc b
+    inc c
+    .loop:
+        wait_vram
+        ld a, [de]
+        ld [hl+], a
+        ld [hl+], a
+        inc de
+        dec c
+        jr nz, .loop
+        dec b
+        jr nz, .loop
 
 ; White+black tile
-	ld de, .gridTiles
-	ld hl, $9000
-	ld c, .cursor-.gridTiles
-	call LCDMemcpySmall
+    ld de, .gridTiles
+    ld hl, $9000
+    ld c, .cursor-.gridTiles
+    call LCDMemcpySmall
 
 ; TL, Left, BL
-	ld hl, $9020 + 7*2
-	ld a, $01
-	ld c, $14
-	call LCDMemsetSmall
+    ld hl, $9020 + 7*2
+    ld a, $01
+    ld c, $14
+    call LCDMemsetSmall
 
 ; Top, Bottom
-	ld hl, $9050 + 7*2
-	ld a, $ff
-	ld c, $04
-	call LCDMemsetSmall
+    ld hl, $9050 + 7*2
+    ld a, $ff
+    ld c, $04
+    call LCDMemsetSmall
 
 ; TR, Right, BR
-	ld hl, $9070 + 7*2
-	ld a, $80
-	ld c, $14
-	call LCDMemsetSmall
+    ld hl, $9070 + 7*2
+    ld a, $80
+    ld c, $14
+    call LCDMemsetSmall
 
     ld de, .cursor
     ld hl, $8000
@@ -53,23 +53,23 @@ LoadFont::
     jp LCDMemcpySmall
 
 .gridTiles:
-	dw `00000000
-	dw `00000001
-	dw `00000000
-	dw `00000001
-	dw `00000000
-	dw `00000001
-	dw `00000000
-	dw `01010101
+    dw `00000000
+    dw `00000001
+    dw `00000000
+    dw `00000001
+    dw `00000000
+    dw `00000001
+    dw `00000000
+    dw `01010101
 
-	dw `33333333
-	dw `33333332
-	dw `33333333
-	dw `33333332
-	dw `33333333
-	dw `33333332
-	dw `33333333
-	dw `32323232
+    dw `33333333
+    dw `33333332
+    dw `33333333
+    dw `33333332
+    dw `33333333
+    dw `33333332
+    dw `33333333
+    dw `32323232
 
 .cursor:
     dw `30000000
@@ -92,7 +92,7 @@ LoadFont::
 
 
 Font:
-	incbin "res/ascii.1bpp"
+    incbin "res/ascii.1bpp"
 .end:
 
 

@@ -369,9 +369,9 @@ OutputResult:
     ld de, $9800 + $20*16
     call ClearText
 
-	ld de, $9800 + $20*16
-	ld hl, .text_predict
-	call PrintCenteredText
+    ld de, $9800 + $20*16
+    ld hl, .text_predict
+    call PrintCenteredText
 
 ; DE = dest to put number
     dec e
@@ -402,12 +402,12 @@ PrintStartToPredict::
     ldh [hPromptPrediction], a
 
 ; Display text
-	ld de, $9800 + $20*16
-	ld hl, .text_prompt
-	jp PrintCenteredText
+    ld de, $9800 + $20*16
+    ld hl, .text_prompt
+    jp PrintCenteredText
 
 .text_prompt:
-	db "START to predict", $00
+    db "START to predict", $00
 
 
 INCLUDE "model.asm"
