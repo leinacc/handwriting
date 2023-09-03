@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "handwriting"
+version = "0.1.0"
+description = ""
+authors = ["leinacc <leinacabalan@yahoo.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.12"
+tensorflow = "^2.13.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

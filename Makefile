@@ -128,6 +128,12 @@ res/%.pb8.size: res/%
 	@$(MKDIR_P) $(@D)
 	$(call filesize,$<,8) > res/$*.pb8.size
 
+model.keras: handwriting.py
+	python $< $@
+
+src/include/model.asm: model.keras process_keras.py
+	python process_keras.py
+
 ###############################################
 #                                             #
 #                 COMPILATION                 #

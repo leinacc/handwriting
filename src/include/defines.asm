@@ -95,3 +95,11 @@ error: MACRO
 		jr \1, @+1
 	ENDC
 ENDM
+
+macro add_A_to_HL
+	add l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
+endm

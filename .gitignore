@@ -2,3 +2,5 @@
 /obj/
 /dep/
 /res/
+*.keras
+src/include/model.asm
